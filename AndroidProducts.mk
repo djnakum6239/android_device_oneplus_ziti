@@ -6,9 +6,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_lahaina.mk
+    $(LOCAL_DIR)/twrp_ziti.mk
 
 COMMON_LUNCH_CHOICES := \
-    omni_lahaina-user \
-    omni_lahaina-userdebug \
-    omni_lahaina-eng
+    twrp_ziti-user \
+    twrp_ziti-userdebug \
+    twrp_ziti-eng
