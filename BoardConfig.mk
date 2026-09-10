@@ -1,3 +1,9 @@
+#
+# Copyright (C) 2026 TeamWin Recovery Project
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
 DEVICE_PATH := device/oneplus/ziti
 
 # For building with minimal manifest
@@ -9,8 +15,11 @@ TARGET_BOOTLOADER_BOARD_NAME := ziti
 TARGET_NO_BOOTLOADER := true
 
 # Target Ramdisk Routing Setup for Split GKI Platforms
+TARGET_NO_RECOVERY := true
 BOARD_USES_RECOVERY_AS_BOOT := false
+BOARD_BUILD_VENDOR_BOOT_IMAGE := true
 BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := true
+BOARD_INCLUDE_RECOVERY_RAMDISK_IN_VENDOR_BOOT := true
 TARGET_COPY_OUT_VENDOR_BOOT := true
 BOARD_INCLUDE_RECOVERY_DTBO := true
 BOARD_USES_GENERIC_KERNEL_IMAGE := true
@@ -63,7 +72,7 @@ TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
-# Verified Boot (AVB) Sign Overrides
+# Verified Boot (AVB) Integrity Sign Overrides
 BOARD_AVB_ENABLE := true
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
 
