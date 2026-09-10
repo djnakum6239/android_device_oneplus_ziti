@@ -33,6 +33,10 @@ BOARD_VENDOR_BOOTIMAGE_PARTITION_SIZE := 100663296
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery.fstab
 BOARD_RECOVERY_RAMDISK_ALLOCAS_FIRST_STAGE := true
 
+# Tell the build engine to process a standard placeholder DTB layout
+BOARD_PREBUILT_DTBIMAGE_DIR := $(DEVICE_PATH)/prebuilt
+BOARD_INCLUDE_DTB_IN_BOOTIMG := true
+
 # Architecture Layout Specifications
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
