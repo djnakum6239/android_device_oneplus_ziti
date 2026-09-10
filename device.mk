@@ -20,3 +20,8 @@ PRODUCT_PACKAGES += \
     android.hardware.boot@1.0-service \
     bootctrl.sm7325 \
     bootctrl.sm7325.recovery
+
+# Qualcomm Automated Storage Decryption Tools
+PRODUCT_PACKAGES += \
+    qcom_decrypt \
+    qcom_decrypt_fbe
