@@ -13,14 +13,13 @@ PRODUCT_PACKAGES += \
     android.hardware.boot@1.0-service \
     bootctrl.sm7325
 
-PRODUCT_STATIC_BOOT_CONTROL_HAL := \
-    bootctrl.sm7325 \
-    libgptutils \
-    libz \
-    libcutils
-
 PRODUCT_PACKAGES += \
     otapreopt_script \
     update_engine \
     update_verifier \
     update_engine_sideload
+    android.hardware.boot@1.0-impl \
+    android.hardware.boot@1.0-service \
+    bootctrl.sm7325 \
+    bootctrl.sm7325.recovery
+
