@@ -94,6 +94,18 @@ TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_USE_TOOLBOX := true
 TW_INCLUDE_REPACKTOOLS := true
 
+# Qualcomm Keymaster / FBE Decryption Configurations
+BOARD_USES_QCOM_FBE_DECRYPTION := true
+BOARD_USES_RECOVERY_AS_BOOT := false
+
+# Dynamic Keystore Presentation Layout Flags
+TW_INCLUDE_CRYPTO := true
+TW_INCLUDE_CRYPTO_FBE := true
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.crypto.volume.filenames_mode=aes-256-cts \
+    fbe.data.wrappedkey=true
+
+
 # Core Initialization Component Declarations
 TARGET_RECOVERY_DEVICE_MODULES += \
     init.recovery.qcom \
