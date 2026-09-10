@@ -1,5 +1,5 @@
-LOCAL_PATH := $(call my-dir)
+PRODUCT_MAKEFILES := \
+    $(LOCAL_PATH)/twrp_ziti.mk
 
-ifeq ($(TARGET_DEVICE),ziti)
-include $(call all-subdir-makefiles,$(LOCAL_PATH))
-endif
+COMMON_LUNCH_CHOICES := \
+    twrp_ziti-eng
