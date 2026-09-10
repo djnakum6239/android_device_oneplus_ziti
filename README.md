@@ -1,4 +1,4 @@
-# Android device tree for qti Lahaina for arm64 (lahaina)
+# Android device tree for oneplus ziti for arm64 (cph2569)
 
 ```
 #
