@@ -8,8 +8,9 @@
 
 set -e
 
-DEVICE=lahaina
-VENDOR=qualcomm
+# Fixed to target your OnePlus Nord CE 3
+DEVICE=ziti
+VENDOR=oneplus
 
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
