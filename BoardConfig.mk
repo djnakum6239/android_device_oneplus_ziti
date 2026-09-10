@@ -76,3 +76,15 @@ TW_SCREEN_BLANK_ON_BOOT := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_USE_TOOLBOX := true
 TW_INCLUDE_REPACKTOOLS := true
+
+# Ramdisk Custom Init Configuration
+TARGET_RECOVERY_DEVICE_MODULES += \
+    init.recovery.qcom \
+    init.environ.rc \
+    ueventd.qcom.rc
+
+# Copy custom configurations directly to the recovery root layout
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/recovery/root/init.environ.rc:$(TARGET_COPY_OUT_VENDOR_BOOT)/recovery/root/init.environ.rc \
+    $(DEVICE_PATH)/recovery/root/init.recovery.qcom.rc:$(TARGET_COPY_OUT_VENDOR_BOOT)/recovery/root/init.recovery.qcom.rc \
+    $(DEVICE_PATH)/recovery/root/ueventd.qcom.rc:$(TARGET_COPY_OUT_VENDOR_BOOT)/recovery/root/ueventd.qcom.rc
