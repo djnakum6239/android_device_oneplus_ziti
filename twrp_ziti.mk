@@ -2,8 +2,8 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 
-# Inherit TWRP minimal configuration instead of full Omni
-$(call inherit-product, vendor/twrp/config/gsm.mk)
+# Inherit TWRP minimal configuration framework
+$(call inherit-product, vendor/twrp/config/common.mk)
 
 # Inherit from device configurations
 $(call inherit-product, device/oneplus/ziti/device.mk)
