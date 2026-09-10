@@ -14,16 +14,6 @@ TARGET_BOARD_PLATFORM := sm7325
 TARGET_BOOTLOADER_BOARD_NAME := ziti
 TARGET_NO_BOOTLOADER := true
 
-# A/B & Virtual A/B Partition Structure Flags
-# Note: Commented out to bypass early AOSP product verification conflicts.
-# AB_OTA_UPDATER := true
-# AB_OTA_PARTITIONS += \
-#     vendor \
-#     odm \
-#     system_ext \
-#     product \
-#     system
-
 # Target Ramdisk Routing Setup for Split GKI Platforms
 BOARD_USES_RECOVERY_AS_BOOT := false
 BOARD_BUILD_VENDOR_BOOT_IMAGE := true
@@ -34,6 +24,10 @@ BOARD_USES_GENERIC_KERNEL_IMAGE := true
 
 # Explicit Partition Size Constraints to Invoke the vendor_boot Engine
 BOARD_VENDOR_BOOTIMAGE_PARTITION_SIZE := 100663296
+
+# First-Stage Ramdisk / Core Storage Mount Declarations
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery.fstab
+BOARD_RECOVERY_RAMDISK_ALLOCAS_FIRST_STAGE := true
 
 # Architecture Layout Specifications
 TARGET_ARCH := arm64
