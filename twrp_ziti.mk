@@ -1,14 +1,15 @@
-# Inherit from those market standard generic configurations
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64bit.mk)
+# Inherit from those products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 
-# Inherit TWRP configuration
-$(call inherit-product, vendor/twrp/config/twrp.mk)
+# Inherit TWRP minimal configuration instead of full Omni
+$(call inherit-product, vendor/twrp/config/gsm.mk)
+
+# Inherit from device configurations
+$(call inherit-product, device/oneplus/ziti/device.mk)
 
 PRODUCT_DEVICE := ziti
 PRODUCT_NAME := twrp_ziti
 PRODUCT_BRAND := OnePlus
-PRODUCT_MODEL := CPH2569
-PRODUCT_MANUFACTURER := OnePlus
-
-PRODUCT_GMS_CLIENTID_BASE := android-oneplus
+PRODUCT_MODEL := Nord CE 3 5G
+PRODUCT_MANUFACTURER := oneplus
