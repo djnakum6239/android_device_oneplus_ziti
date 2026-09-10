@@ -14,6 +14,9 @@ TARGET_BOARD_PLATFORM := sm7325
 TARGET_BOOTLOADER_BOARD_NAME := ziti
 TARGET_NO_BOOTLOADER := true
 
+# FIXED CORE GATEKEEPER VARIABLE NAME: Added missing underscore spaces
+BOARD_BOOT_HEADER_VERSION := 4
+
 # Target Ramdisk Routing Setup for Split GKI Platforms
 TARGET_NO_RECOVERY := true
 BOARD_USES_RECOVERY_AS_BOOT := false
@@ -22,10 +25,6 @@ BOARD_INCLUDE_RECOVERY_RAMDISK_IN_VENDOR_BOOT := true
 TARGET_COPY_OUT_VENDOR_BOOT := true
 BOARD_INCLUDE_RECOVERY_DTBO := true
 BOARD_USES_GENERIC_KERNEL_IMAGE := true
-
-# Modern AOSP Ramdisk Fragment Mapping to activate vendor_boot
-BOARD_VENDOR_RAMDISK_FRAGMENTS := recovery
-BOARD_VENDOR_RAMDISK_FRAGMENT.recovery.MKBOOTIMG_ARGS := --ramdisk_type RECOVERY
 
 # Explicit Partition Size Constraints to Invoke the vendor_boot Engine
 BOARD_VENDOR_BOOTIMAGE_PARTITION_SIZE := 100663296
@@ -49,8 +48,7 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := generic
 
 # Kernel Header Options (Forced to v4 layout constraints required by Nord CE 3)
-BOARD_BOOTIMG_HEADER_VERSION := 4
-BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
+BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 BOARD_KERNEL_IMAGE_NAME := Image
 
 # Local Prebuilt Kernel Binary Tracking Link
