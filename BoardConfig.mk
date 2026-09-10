@@ -101,10 +101,11 @@ BOARD_USES_RECOVERY_AS_BOOT := false
 # Dynamic Keystore Presentation Layout Flags
 TW_INCLUDE_CRYPTO := true
 TW_INCLUDE_CRYPTO_FBE := true
-PRODUCT_PROPERTY_OVERRIDES += \
+
+# FIXED: Replaced read-only variable assignment with correct hardware tier prop mapping
+TARGET_RECOVERY_DEVICE_PROPS += \
     ro.crypto.volume.filenames_mode=aes-256-cts \
     fbe.data.wrappedkey=true
-
 
 # Core Initialization Component Declarations
 TARGET_RECOVERY_DEVICE_MODULES += \
