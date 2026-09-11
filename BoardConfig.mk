@@ -94,6 +94,12 @@ TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_USE_TOOLBOX := true
 TW_INCLUDE_REPACKTOOLS := true
 
+# Screen and Brightness Parameters
+TW_MAX_BRIGHTNESS := 2047
+TW_DEFAULT_BRIGHTNESS := 1024
+OF_ALLOW_DISABLE_NAVBAR := 1
+
+
 # Qualcomm Keymaster / FBE Decryption Configurations
 BOARD_USES_QCOM_FBE_DECRYPTION := true
 BOARD_USES_RECOVERY_AS_BOOT := false
