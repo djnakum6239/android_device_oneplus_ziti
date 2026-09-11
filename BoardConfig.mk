@@ -14,13 +14,13 @@ TARGET_BOARD_PLATFORM := sm7325
 TARGET_BOOTLOADER_BOARD_NAME := ziti
 TARGET_NO_BOOTLOADER := true
 
-# FIXED CONFIGURATION MATRIX: Force recovery tracking into the primary boot ramdisk layer
+# FIXED FLAG ARCHITECTURE: Disable GKI validation loops to build a recovery-in-boot structure
 BOARD_USES_RECOVERY_AS_BOOT := true
 TARGET_NO_RECOVERY := false
 BOARD_BUILD_VENDOR_BOOT_IMAGE := false
 BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := false
 BOARD_INCLUDE_RECOVERY_RAMDISK_IN_VENDOR_BOOT := false
-BOARD_USES_GENERIC_KERNEL_IMAGE := true
+BOARD_USES_GENERIC_KERNEL_IMAGE := false
 
 # Base Imaging Constraints (Matches standard Snapdragon 782G factory pagesize metrics)
 BOARD_BOOTIMG_HEADER_VERSION := 3
