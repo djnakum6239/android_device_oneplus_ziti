@@ -36,3 +36,22 @@ on property:ro.boot.usbcontroller=*
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
+
+# Do not start by default
+service oplus_keymaster /vendor/bin/hw/android.hardware.keymaster@4.1-service-oplus
+    class early_halt
+    user root
+    group root drmrpc
+    disabled
+    seclabel u:r:recovery:s0
+
+service android-keymaster-4-1 /vendor/bin/hw/android.hardware.keymaster@4.1-service-qti
+    class early_halt
+    user root
+    group root drmrpc
+    disabled
+    seclabel u:r:recovery:s0
+
+# Run our unified check script early on
+on fs
+    exec u:r:recovery:s0 -- /sbin/init.unified.sh
